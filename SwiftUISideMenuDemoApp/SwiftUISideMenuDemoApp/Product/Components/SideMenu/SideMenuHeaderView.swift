@@ -1,38 +1,36 @@
-//
-//  SideMenuHeaderView.swift
-//  SwiftUISideMenuDemoApp
-//
-//  Created by mehmet karanlık on 19.01.2022.
-//
+ //
+ //  SideMenuHeaderView.swift
+ //  SwiftUISideMenuDemoApp
+ //
+ //  Created by mehmet karanlık on 19.01.2022.
+ //
 
 import SwiftUI
 
 struct SideMenuHeaderView: View {
  let imageUrl : String?
 
-
-
-
  var body: some View {
   VStack(alignment: .leading, spacing: 3) {
-      buildCircleAvatar()
+   buildCircleAvatar()
    buildUserCredentails()
-
-   HStack {
-    Text("1,254").bold()
-    Text("Following")
-    DynamicHorizontalSpacer(size: 10)
-    Text("1,254").bold()
-    Text("Following")
-    Spacer()
-   }
+   buildFollowerInfo()
    Spacer()
-
-
-     }
+  }
   .foregroundColor(.white)
-    }
 
+ }
+
+ fileprivate func buildFollowerInfo() -> some View {
+  return HStack {
+   Text("1,254").bold()
+   Text("Following")
+   DynamicHorizontalSpacer(size: 10)
+   Text("1,254").bold()
+   Text("Following")
+   Spacer()
+  }
+ }
 
  fileprivate func buildUserCredentails() -> some View {
   return VStack(alignment:.leading, spacing: 3) {
@@ -59,10 +57,10 @@ struct SideMenuHeaderView: View {
 }
 
 struct SideMenuHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        SideMenuHeaderView(imageUrl: nil)
-        .previewLayout(.sizeThatFits)
+ static var previews: some View {
+  SideMenuHeaderView(imageUrl: nil)
+   .previewLayout(.sizeThatFits)
 
 
-    }
+ }
 }
