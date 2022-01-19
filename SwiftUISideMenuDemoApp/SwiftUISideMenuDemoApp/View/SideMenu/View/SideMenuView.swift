@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct SideMenuView: View {
+ @ObservedObject var viewModel : SideMenuViewModel = SideMenuViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+     ZStack {
+      ApplicationGradients.get.redBlueGradient
+      VStack {
+       // Header
+       SideMenuHeaderView(imageUrl: nil)
+        .frame(height:240)
+       // Option View
+       ForEach(0..<9) {_ in
+        SideMenuOptionView()
+       }
+       .padding(.leading)
+       Spacer()
+
+      }
+      .padding()
+     }
     }
 }
 
