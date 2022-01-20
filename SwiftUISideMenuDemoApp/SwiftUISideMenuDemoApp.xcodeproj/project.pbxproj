@@ -19,6 +19,7 @@
 		4645ACC027979F7C004BD0AB /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645ACBF27979F7C004BD0AB /* SideMenuViewModel.swift */; };
 		4645ACC32797A3A2004BD0AB /* DynamicVerticalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645ACC22797A3A2004BD0AB /* DynamicVerticalSpacer.swift */; };
 		4645ACC52797A42A004BD0AB /* DynamicHorizontalSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645ACC42797A42A004BD0AB /* DynamicHorizontalSpacer.swift */; };
+		4657C7ED2798E5900042C6C0 /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657C7EC2798E5900042C6C0 /* HomeViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		4645ACBF27979F7C004BD0AB /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		4645ACC22797A3A2004BD0AB /* DynamicVerticalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicVerticalSpacer.swift; sourceTree = "<group>"; };
 		4645ACC42797A42A004BD0AB /* DynamicHorizontalSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHorizontalSpacer.swift; sourceTree = "<group>"; };
+		4657C7EC2798E5900042C6C0 /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,8 @@
 		4645ACA827978898004BD0AB /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4645AC99279787B0004BD0AB /* HomeView.swift */,
+				4657C7EB2798E56B0042C6C0 /* ViewModel */,
+				4657C7EA2798E5610042C6C0 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -211,6 +214,22 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4657C7EA2798E5610042C6C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4645AC99279787B0004BD0AB /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4657C7EB2798E56B0042C6C0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4657C7EC2798E5900042C6C0 /* HomeViewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,6 +307,7 @@
 				4645AC9A279787B0004BD0AB /* HomeView.swift in Sources */,
 				4645ACB127979710004BD0AB /* SideMenuHeaderView.swift in Sources */,
 				4645AC98279787B0004BD0AB /* SwiftUISideMenuDemoAppApp.swift in Sources */,
+				4657C7ED2798E5900042C6C0 /* HomeViewViewModel.swift in Sources */,
 				4645ACB327979739004BD0AB /* SideMenuOptionView.swift in Sources */,
 				4645ACC32797A3A2004BD0AB /* DynamicVerticalSpacer.swift in Sources */,
 				4645ACAC27978C99004BD0AB /* NavigationBarModifier.swift in Sources */,

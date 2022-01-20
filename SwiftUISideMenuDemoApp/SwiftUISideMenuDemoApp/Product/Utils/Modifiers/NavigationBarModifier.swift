@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct NavigationBardModifier : ViewModifier {
+struct NavigationBarModifier : ViewModifier {
+ var navigationBarHidden : Bool
  let imageName : String?
  let title : String?
  var function : () -> Void
@@ -18,9 +19,12 @@ struct NavigationBardModifier : ViewModifier {
  func body(content: Content) -> some View {
   content
    .navigationBarTitleDisplayMode(.inline)
+   .navigationBarHidden(navigationBarHidden ? true : false)
    .navigationBarItems(
     leading: Button(action: {
-     self.function()
+     withAnimation(.spring()) {
+      self.function()
+     }
     }, label: {
      Image(systemName: imageName ?? "list.bullet")
       .foregroundColor(.black)

@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct SideMenuView: View {
- @ObservedObject var viewModel : SideMenuViewModel = SideMenuViewModel()
+ @Binding var isShowing : Bool
+ @ObservedObject private var viewModel : SideMenuViewModel = SideMenuViewModel()
     var body: some View {
      ZStack {
       ApplicationGradients.get.redBlueGradient
       VStack {
        // Header
-       SideMenuHeaderView(imageUrl: nil)
+       SideMenuHeaderView(isShowing: $isShowing,imageUrl: nil)
         .frame(height:240)
        // Option View
-       ForEach(0..<9) {_ in
-        SideMenuOptionView()
+       ForEach(SideMenuEnum.allCases, id: \.self) {item in
+        NavigationLink {
+         Text(item.title)
+        } label: {
+         SideMenuOptionView(sideMenuEnum: item)
+        }
+
+
        }
        .padding(.leading)
        Spacer()
@@ -31,6 +38,6 @@ struct SideMenuView: View {
 
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuView()
+     SideMenuView(isShowing: .constant(true))
     }
 }

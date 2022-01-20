@@ -8,18 +8,38 @@
 import SwiftUI
 
 struct SideMenuHeaderView: View {
+ @Binding var isShowing : Bool
  let imageUrl : String?
 
  var body: some View {
-  VStack(alignment: .leading, spacing: 3) {
-   buildCircleAvatar()
-   buildUserCredentails()
-   buildFollowerInfo()
-   Spacer()
+  ZStack(alignment: .topTrailing) {
+   buildCloseButton()
+   VStack(alignment: .leading, spacing: 3) {
+    buildCircleAvatar()
+    buildUserCredentails()
+    buildFollowerInfo()
+    Spacer()
+   }
+   .foregroundColor(.white)
   }
-  .foregroundColor(.white)
 
  }
+
+ fileprivate func buildCloseButton() -> some View {
+  return Button {
+   withAnimation(.spring()) {
+    isShowing.toggle()
+   }
+  } label: {
+   Image(systemName: "xmark")
+    .frame(width: 32, height: 32, alignment: .center)
+    .foregroundColor(.white)
+    .padding()
+  }
+ }
+
+
+
 
  fileprivate func buildFollowerInfo() -> some View {
   return HStack {
@@ -58,7 +78,7 @@ struct SideMenuHeaderView: View {
 
 struct SideMenuHeaderView_Previews: PreviewProvider {
  static var previews: some View {
-  SideMenuHeaderView(imageUrl: nil)
+  SideMenuHeaderView(isShowing: .constant(true),imageUrl: nil)
    .previewLayout(.sizeThatFits)
 
 
